@@ -1,0 +1,39 @@
+.DS_Store
+__pycache__/
+*.pyc
+
+# Keep the folder structure, but do not track personal working data by default.
+assets/*.md
+!assets/*.example.md
+!assets/README.md
+!assets/past-applications/
+assets/past-applications/*
+!assets/past-applications/.gitkeep
+!assets/past-applications/example-application.md
+
+# Track only the public demo workspace.
+companies/*
+!companies/.gitkeep
+!companies/demo-company/
+companies/demo-company/*
+!companies/demo-company/.gitkeep
+!companies/demo-company/company.md
+!companies/demo-company/questions/
+companies/demo-company/questions/*
+!companies/demo-company/questions/q1.md
+!companies/demo-company/references/
+companies/demo-company/references/*
+!companies/demo-company/references/example-reference.md
+
+# Temporary company buckets should never be committed.
+companies/_tmp-*/
+
+# Question library often contains third-party source text.
+question-library/*
+!question-library/README.md
+!question-library/*/
+question-library/*/*
+!question-library/*/.gitkeep
+
+# Ignore accidental folders created with a leading space in the name.
+\ question-library/

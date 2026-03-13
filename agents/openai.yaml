@@ -1,0 +1,4 @@
+interface:
+  display_name: "Job Application Agent"
+  short_description: "국문 자소서 작성과 리라이트 지원"
+  default_prompt: "Use $job-application-agent to build company-specific Korean application essays from my assets and references."
