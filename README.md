@@ -59,9 +59,37 @@ python3 scripts/validation.py companies/<company-name>/questions/q1.md
 
 검사 섹션:
 
+- `## 참조 자산`
+- `## 질문 태그`
+- `## 유사 문항 참조`
 - `## 글자 수 제한`
-- `## 자체 평가`
+- `## 리뷰어 평가`
 - `## 최종 답변`
+
+`## 참조 자산`은 실제로 읽은 파일 경로를 남기는 게이트입니다. 최종 검증을 통과하려면 최소한 아래 경로가 포함되어 있어야 합니다.
+
+- `assets/resume.md`
+- `assets/portfolio.md`
+- `assets/credentials.md`
+- `companies/<company-name>/company.md`
+- `companies/<company-name>/questions/` 아래 기존 파일 1개 이상
+- `companies/<company-name>/references/` 아래 파일 1개 이상
+
+각 항목은 `- 경로 | 이 문항에서 어떻게 썼는지` 형식으로 적습니다.
+현재 회사에 기존 질문 파일이나 `before`, `after`, `comparison` 파일이 있으면 그것을 공통 과거 지원서보다 우선 참조합니다.
+
+`## 유사 문항 참조`는 내 기존 문항을 먼저 보게 만드는 게이트입니다. `companies/*/questions/*.md` 아래 파일을 최소 1개 이상 적고, 왜 지금 질문과 유사한지와 무엇을 가져올지 함께 적어야 합니다.
+`## 질문 태그`는 유사 문항 판단의 1차 기준입니다. 자유 태그를 쓰지 않고 `question-library/README.md`에 있는 기존 분류 체계를 그대로 사용합니다. 즉 `대표 질문 유형:`은 `motivation`, `job-fit-and-career-vision`, `problem-solving` 같은 값 중 하나를 고르고, `보조 태그:`로 세부 의도를 덧붙입니다.
+
+`## 리뷰어 평가`는 단순 메모가 아니라 reviewer 게이트입니다. 최종 검증을 통과하려면 최소한 아래 항목이 모두 채워져 있어야 합니다.
+
+- `리뷰어 총평: ...`
+- `리뷰어 반복 횟수: 2회`
+- `핵심 보완 포인트: ...`
+- `수정 반영 요약: ...`
+- `최종 판정: 통과`
+- `잔여 미흡 항목: 없음`
+- `회사 레퍼런스 구조 비교: ...`
 
 ## Execution Model
 
@@ -77,6 +105,7 @@ python3 scripts/validation.py companies/<company-name>/questions/q1.md
 6. 문항별 경험 배치안을 먼저 정한다.
 7. 그다음부터 `q1.md`, `q2.md`처럼 한 문항씩 작성한다.
 8. 각 문항은 `writer -> reviewer -> revision -> final validation` 순서로 닫는다.
+9. 사용자에게는 필요 시 `초안 -> 리뷰어 평가 -> 수정 반영 -> 최종 답변`까지 드러내며 진행한다.
 
 ## Quick Start
 
